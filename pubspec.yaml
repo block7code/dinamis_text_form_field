@@ -2,7 +2,8 @@ name: dinamis_text_form_field
 
 description: This pakcege for custom text form fields to dinamis
 version: 1.0.0
-homepage: https://github.com/block7code/dinamis_text_form_field
+homepage: https://plus.fluttercommunity.dev/
+repository: https://github.com/block7code/dinamis_text_form_field
 
 environment:
   sdk: '>=3.2.1 <4.0.0'
