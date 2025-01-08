@@ -165,6 +165,10 @@ Add the following to your `pubspec.yaml` file:
 
 ```
 
+## Preview 
+
+<img src="/screenshots/image_01.gif" height="300"> 
+
 
 
 
