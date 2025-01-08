@@ -167,7 +167,9 @@ Add the following to your `pubspec.yaml` file:
 
 ## Preview 
 
-<img src="/screenshots/image_01.gif" height="300"> 
+<img src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_01.gif" height="540"> 
+
+
 
 
 

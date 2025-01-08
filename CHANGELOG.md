@@ -17,3 +17,7 @@
 - add Form Type (basic and material).
 - add Field Type (input, listDropdown, listNewPage ).
 - add xample how to use packages dinamis_text_form_field.
+
+## [2.0.0+1 to +3] - 2025-01-08
+### Added 
+- add preview in readme
