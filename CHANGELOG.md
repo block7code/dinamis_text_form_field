@@ -14,7 +14,7 @@
 - add Field Type (input, listDropdown, listNewPage )
 - add xample how to use packages dinamis_text_form_field
 
-### [2.0.0+1 to +3] - 2025-01-08
+### [2.0.0+1] to [2.0.0+3] - 2025-01-08
 ## Added 
 - add preview in readme
 
@@ -23,6 +23,14 @@
 - update in FieldType  add type password
 - set all function TextFormField in class DynamicTextField
 
+# Varsion [1.0.0] to Varsion [2.0.1] - Discontinued
+
+⚠️ **This package is discontinued.** We recommend using version dynamic_text_form_field: ^2.0.2 or latest version if available.
+
 ### [2.0.2] - 2025-01-09
-## Added
-- updateinfo in readme
+## Update
+- update info in readme
+
+### [2.0.2+1] - 2025-01-10
+## Update
+- update info in readme
