@@ -380,6 +380,6 @@ the [Issues](https://github.com/block7code/dinamis_text_form_field/issues) secti
 
 # Note Varsion [1.0.0] to Varsion [2.0.1] - Discontinued
 
-⚠️ **This package is discontinued.** We recommend using version dynamic_text_form_field: ^2.0.2 or latest version if available.
+⚠️ **This package varsion is discontinued.** We recommend using version dynamic_text_form_field: ^2.0.2 or latest version if available.
 
 
