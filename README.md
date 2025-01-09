@@ -334,8 +334,8 @@ And can also use other default TextFormField function
 ## Preview  
 <table style="width:100%">
   <tr>
-    <th>Preview  FormType basic</th>
-    <th>Preview  FormType material</th>
+    <th>FormType Basic</th>
+    <th>FormType Material</th>
   </tr>
   <tr>
     <td><img height="540"  alt="Preview  FormType basic"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_01.gif" > </td>
