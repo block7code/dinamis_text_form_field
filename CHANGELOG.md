@@ -22,3 +22,7 @@
 ## Update 
 - update in FieldType  add type password
 - set all function TextFormField in class DynamicTextField
+
+### [2.0.2] - 2025-01-09
+## Added
+- updateinfo in readme
