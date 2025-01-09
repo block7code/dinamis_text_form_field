@@ -332,10 +332,10 @@ And can also use other default TextFormField function
 ```
 
 ## Preview  FormType basic
-<img width="514" height="540"  alt="Preview  FormType basic"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_01.gif" > 
+<img height="540"  alt="Preview  FormType basic"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_01.gif" > 
 
 ## Preview  FormType material
-<img width="514" height="540" alt="Preview  FormType material"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_02.gif" > 
+<img height="540" alt="Preview  FormType material"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_02.gif" > 
 
 
 
