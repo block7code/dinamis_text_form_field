@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Dinamic Text Form Field',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -34,17 +35,18 @@ class _MyHomePageState extends State<MyHomePage> {
   final _fullnameController = TextEditingController();
   final _gendersController = TextEditingController();
   final _citysController = TextEditingController();
+  final _passwordController = TextEditingController();
 
-  final List<SelectedItem> _listGendes = [
-    SelectedItem(key: '1', value: 'Men'),
-    SelectedItem(key: '2', value: 'Famele'),
+  final List<SelectedItem> _listGenders = [
+    SelectedItem(key: '1', value: 'Male'),
+    SelectedItem(key: '2', value: 'Female'),
   ];
 
   final List<SelectedItem> _listCitys = [
     SelectedItem(key: '1', value: 'Banda Aceh'),
     SelectedItem(key: '2', value: 'Lhokseumawe'),
     SelectedItem(key: '3', value: 'Jakarta Selatan'),
-    SelectedItem(key: '4', value: 'Kota Bandung'),
+    SelectedItem(key: '4', value: 'Bandung'),
   ];
 
   final InputDecoration customInputDecoration = InputDecoration(
@@ -70,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Size size = MediaQuery.of(context).size;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: EdgeInsets.symmetric(horizontal: size.height * 0.02),
       child: ListView(
         children: [
           Column(
@@ -79,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(
                 height: size.height * 0.01,
               ),
-
+              //// this sample for Form Type besic
               DynamicTextField(
                 textDynamicController: _fullnameController,
                 title: 'Full Name',
@@ -88,10 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
               DynamicTextField(
                 fieldtype: FieldType.listDropdown,
                 textDynamicController: _gendersController,
-                title: 'Gen',
+                title: 'Gender',
                 hint: 'Input gender...',
                 titleList: "Select gender",
-                listItem: _listGendes,
+                listItem: _listGenders,
               ),
               DynamicTextField(
                 fieldtype: FieldType.listNewPage,
@@ -101,34 +103,66 @@ class _MyHomePageState extends State<MyHomePage> {
                 titleList: "Select City",
                 listItem: _listCitys,
               ),
-              //// this sample for Form Type material
               DynamicTextField(
-                formType: FormType.material,
-                textDynamicController: _fullnameController,
-                title: 'Full name',
-                hint: 'Input full name...',
+                fieldtype: FieldType.password,
+                textDynamicController: _passwordController,
+                title: 'Password',
+                hint: 'Input password...',
               ),
-              //// this sample for custom InputDecoration
-              DynamicTextField(
-                textDynamicController: _citysController,
-                title: 'City',
-                hint: 'Input city...',
-                titleList: "Select City",
-                listItem: _listCitys,
-                inputDecoration: customInputDecoration,
-              ),
-              //// this sample for set validator
-              DynamicTextField(
-                textDynamicController: _citysController,
-                title: 'City',
-                hint: 'Input city...',
-                validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Text is empty';
-                  }
-                  return null;
-                },
-              ),
+              // //// this sample for Form Type material
+              // DynamicTextField(
+              //   formType: FormType.material,
+              //   textDynamicController: _fullnameController,
+              //   title: 'Full Name',
+              //   hint: 'Input full name...',
+              // ),
+              // DynamicTextField(
+              //   formType: FormType.material,
+              //   fieldtype: FieldType.listDropdown,
+              //   textDynamicController: _gendersController,
+              //   title: 'Gender',
+              //   hint: 'Input gender...',
+              //   titleList: "Select gender",
+              //   listItem: _listGenders,
+              // ),
+              // DynamicTextField(
+              //   formType: FormType.material,
+              //   fieldtype: FieldType.listNewPage,
+              //   textDynamicController: _citysController,
+              //   title: 'City',
+              //   hint: 'Input city...',
+              //   titleList: "Select City",
+              //   listItem: _listCitys,
+              // ),
+              // DynamicTextField(
+              //   formType: FormType.material,
+              //   fieldtype: FieldType.password,
+              //   textDynamicController: _passwordController,
+              //   title: 'Password',
+              //   hint: 'Input password...',
+              // ),
+
+              // //// this sample for custom InputDecoration
+              // DynamicTextField(
+              //   textDynamicController: _citysController,
+              //   title: 'City',
+              //   hint: 'Input city...',
+              //   titleList: "Select City",
+              //   listItem: _listCitys,
+              //   inputDecoration: customInputDecoration,
+              // ),
+              // //// this sample for set validator
+              // DynamicTextField(
+              //   textDynamicController: _citysController,
+              //   title: 'City',
+              //   hint: 'Input city...',
+              //   validator: (text) {
+              //     if (text == null || text.isEmpty) {
+              //       return 'Text is empty';
+              //     }
+              //     return null;
+              //   },
+              // ),
             ],
           ),
         ],
