@@ -1,7 +1,7 @@
 name: dinamis_text_form_field
 
 description: This pakcege for custom text form fields to dinamis
-version: 2.0.1
+version: 2.0.2
 homepage: https://docs.flutter.dev/cookbook/forms/text-input
 repository: https://github.com/block7code/dinamis_text_form_field
 
