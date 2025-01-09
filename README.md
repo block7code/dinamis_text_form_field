@@ -37,7 +37,7 @@ Use this plugin in your Flutter app to:
 Add the following to your `pubspec.yaml` file:
 
     dependencies:
-		dinamis_text_form_field: ^2.0.2
+		dinamis_text_form_field: ^2.0.2+3
 
 
 
