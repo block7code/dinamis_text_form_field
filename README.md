@@ -1,8 +1,30 @@
 # dinamis_text_form_field
 ![pub](https://img.shields.io/badge/pub-v0.23.0-orange) ![GitHub](https://img.shields.io/github/license/liodali/checkbox_grouped)
 
+    # Dinamis Text Form Field
 
-create your dynamic form with easier way
+    create your dynamic form with easier way
+
+
+Often, writing repetitive textformfiled code, and this will make the code too crowded and long.
+
+With this dynamic_text_form_field package, writing code will be more efficient and dynamic, where the functions of form field input, field selected list dropdown, selected list in other pages and form field password become one function so that writing code becomes very short.
+
+And also can set the type of form type basic and type material as needed. This plugin supports iOS and Android.
+
+|               | Android   | iOS    |
+| :-------------| :---------| :------|
+| **Support**   | SDK 21+   | 10.0+  |
+
+# Dinamis Text Form Field Implementation Guide
+
+## Features
+
+Use this plugin in your Flutter app to:
+* To manage submitted text forms with different field types from requst and write code in an easier way.
+* Easy to manage field decoration by developers .
+* Easy to manage form type.
+
 
 ## Getting Started
 
@@ -331,7 +353,7 @@ And can also use other default TextFormField function
 
 ```
 
-## Preview  
+## Preview Dinamis Text Form Field UI Sample
 <table style="width:100%">
   <tr>
     <th>FormType Basic</th>
@@ -344,5 +366,20 @@ And can also use other default TextFormField function
   
 </table>
 
+## Changelog
+
+All notable changes to this project will be documented in [this file](./CHANGELOG.md).
+
+## Issues
+
+To report your issues, submit them directly in
+the [Issues](https://github.com/block7code/dinamis_text_form_field/issues) section.
+
+
+
+
+# Varsion [1.0.0] to Varsion [2.0.1] - Discontinued
+
+⚠️ **This package is discontinued.** We recommend using version dynamic_text_form_field: ^2.0.2 or latest version if available.
 
 
