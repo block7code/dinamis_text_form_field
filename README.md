@@ -8,14 +8,14 @@ create your dynamic form with easier way
 
  * Generate custom form
  * Form Type (basic and material)
- * Field Type (input, listDropdown, listNewPage )
+ * Field Type (input, listDropdown, listNewPage and password)
 
 ## Installing
 
 Add the following to your `pubspec.yaml` file:
 
     dependencies:
-		dinamis_text_form_field: ^2.0.0
+		dinamis_text_form_field: ^2.0.2
 
 
 
