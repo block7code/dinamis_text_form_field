@@ -21,156 +21,321 @@ Add the following to your `pubspec.yaml` file:
 
 
 ## Simple Usage
-#### Creating a basic `SimpleDinamisTextFormField`:
+#### Creating a basic `Simple DynamicTextField`:
 
 ```dart
         import 'package:dinamis_text_form_field/dinamis_text_form_field.dart';
         import 'package:flutter/material.dart';
 
-        void main() {
-        runApp(const MyApp());
-        }
-
+        
         class MyApp extends StatelessWidget {
-            const MyApp({super.key});
+        const MyApp({super.key});
 
-            // This widget is the root of your application.
-            @override
-            Widget build(BuildContext context) {
-                return MaterialApp(
-                title: 'Dinamic Text Form Field',
-                theme: ThemeData(
-                    colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                    useMaterial3: true,
-                ),
-                home: const MyHomePage(title: 'Dinamic Text Form Field'),
-                );
-            }
+        // This widget is the root of your application.
+        @override
+        Widget build(BuildContext context) {
+            return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Dinamic Text Form Field',
+            theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+            ),
+            home: const MyHomePage(title: 'Dinamic Text Form Field'),
+            );
+        }
         }
 
         class MyHomePage extends StatefulWidget {
-            const MyHomePage({super.key, required this.title});
-            final String title;
+        const MyHomePage({super.key, required this.title});
+        final String title;
 
-            @override
-            State<MyHomePage> createState() => _MyHomePageState();
+        @override
+        State<MyHomePage> createState() => _MyHomePageState();
         }
 
         class _MyHomePageState extends State<MyHomePage> {
-            final _fullnameController = TextEditingController();
-            final _gendersController = TextEditingController();
-            final _citysController = TextEditingController();
+        final _fullnameController = TextEditingController();
+        final _gendersController = TextEditingController();
+        final _citysController = TextEditingController();
+        final _passwordController = TextEditingController();
 
-            final List<SelectedItem> _listGendes = [
-                SelectedItem(key: '1', value: 'Men'),
-                SelectedItem(key: '2', value: 'Famele'),
-            ];
+        final List<SelectedItem> _listGenders = [
+            SelectedItem(key: '1', value: 'Male'),
+            SelectedItem(key: '2', value: 'Female'),
+        ];
 
-            final List<SelectedItem> _listCitys = [
-                SelectedItem(key: '1', value: 'Banda Aceh'),
-                SelectedItem(key: '2', value: 'Lhokseumawe'),
-                SelectedItem(key: '3', value: 'Jakarta Selatan'),
-                SelectedItem(key: '4', value: 'Kota Bandung'),
-            ];
+        final List<SelectedItem> _listCitys = [
+            SelectedItem(key: '1', value: 'Banda Aceh'),
+            SelectedItem(key: '2', value: 'Lhokseumawe'),
+            SelectedItem(key: '3', value: 'Jakarta Selatan'),
+            SelectedItem(key: '4', value: 'Bandung'),
+        ];
 
-            final InputDecoration customInputDecoration = InputDecoration(
-                isDense: true,
-                hintText: 'bla bla',
-                border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(width: 1.5),
-                ),
+        final InputDecoration customInputDecoration = InputDecoration(
+            isDense: true,
+            hintText: 'bla bla',
+            border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(width: 1.5),
+            ),
+        );
+
+        @override
+        Widget build(BuildContext context) {
+            return Scaffold(
+            appBar: AppBar(
+                title: Text(widget.title),
+            ),
+            body: _mainBody(context),
             );
-
-            @override
-            Widget build(BuildContext context) {
-                return Scaffold(
-                appBar: AppBar(
-                    title: Text(widget.title),
-                ),
-                body: _mainBody(context),
-                );
-            }
-
-            Widget _mainBody(context) {
-                Size size = MediaQuery.of(context).size;
-
-                return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: ListView(
-                    children: [
-                        Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                            SizedBox(
-                                height: size.height * 0.01,
-                            ),
-
-                            DynamicTextField(
-                                textDynamicController: _fullnameController,
-                                title: 'Full Name',
-                                hint: 'Input full name...',
-                            ),
-                            DynamicTextField(
-                                fieldtype: FieldType.listDropdown,
-                                textDynamicController: _gendersController,
-                                title: 'Gen',
-                                hint: 'Input gender...',
-                                titleList: "Select gender",
-                                listItem: _listGendes,
-                            ),
-                            DynamicTextField(
-                                fieldtype: FieldType.listNewPage,
-                                textDynamicController: _citysController,
-                                title: 'City',
-                                hint: 'Input city...',
-                                titleList: "Select City",
-                                listItem: _listCitys,
-                            ),
-                            // this sample for Form Type material
-                            DynamicTextField(
-                                formType: FormType.material,
-                                textDynamicController: _fullnameController,
-                                title: 'Full name',
-                                hint: 'Input full name...',
-                            ),
-                            //// this sample for custom InputDecoration
-                            DynamicTextField(
-                                textDynamicController: _citysController,
-                                title: 'City',
-                                hint: 'Input city...',
-                                titleList: "Select City",
-                                listItem: _listCitys,
-                                inputDecoration: customInputDecoration,
-                            ),
-                            //// this sample for set validator
-                            DynamicTextField(
-                                textDynamicController: _citysController,
-                                title: 'City',
-                                hint: 'Input city...',
-                                validator: (text) {
-                                if (text == null || text.isEmpty) {
-                                    return 'Text is empty';
-                                }
-                                return null;
-                                },
-                            ),
-                            ],
-                        ),
-                        ],
-                    ),
-                );
-            }
         }
+
+        Widget _mainBody(context) {
+            Size size = MediaQuery.of(context).size;
+
+            return Padding(
+            padding: EdgeInsets.symmetric(horizontal: size.height * 0.02),
+            child: ListView(
+                children: [
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                    SizedBox(
+                        height: size.height * 0.01,
+                    ),
+                    //// this sample for Form Type besic
+                    DynamicTextField(
+                        textDynamicController: _fullnameController,
+                        title: 'Full Name',
+                        hint: 'Input full name...',
+                    ),
+                    DynamicTextField(
+                        fieldtype: FieldType.listDropdown,
+                        textDynamicController: _gendersController,
+                        title: 'Gender',
+                        hint: 'Input gender...',
+                        titleList: "Select gender",
+                        listItem: _listGenders,
+                    ),
+                    DynamicTextField(
+                        fieldtype: FieldType.listNewPage,
+                        textDynamicController: _citysController,
+                        title: 'City',
+                        hint: 'Input city...',
+                        titleList: "Select City",
+                        listItem: _listCitys,
+                    ),
+                    DynamicTextField(
+                        fieldtype: FieldType.password,
+                        textDynamicController: _passwordController,
+                        title: 'Password',
+                        hint: 'Input password...',
+                    ),
+                    
+                    ],
+                ),
+                ],
+            ),
+            );
+        }
+    }
+
 
 ```
 
-## Preview 
 
-<img src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_01.gif" height="540"> 
+#### Creating a material `Simple DynamicTextField`:
+
+```dart
+        import 'package:dinamis_text_form_field/dinamis_text_form_field.dart';
+        import 'package:flutter/material.dart';
+
+        
+        class MyApp extends StatelessWidget {
+        const MyApp({super.key});
+
+        // This widget is the root of your application.
+        @override
+        Widget build(BuildContext context) {
+            return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Dinamic Text Form Field',
+            theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+            ),
+            home: const MyHomePage(title: 'Dinamic Text Form Field'),
+            );
+        }
+        }
+
+        class MyHomePage extends StatefulWidget {
+        const MyHomePage({super.key, required this.title});
+        final String title;
+
+        @override
+        State<MyHomePage> createState() => _MyHomePageState();
+        }
+
+        class _MyHomePageState extends State<MyHomePage> {
+        final _fullnameController = TextEditingController();
+        final _gendersController = TextEditingController();
+        final _citysController = TextEditingController();
+        final _passwordController = TextEditingController();
+
+        final List<SelectedItem> _listGenders = [
+            SelectedItem(key: '1', value: 'Male'),
+            SelectedItem(key: '2', value: 'Female'),
+        ];
+
+        final List<SelectedItem> _listCitys = [
+            SelectedItem(key: '1', value: 'Banda Aceh'),
+            SelectedItem(key: '2', value: 'Lhokseumawe'),
+            SelectedItem(key: '3', value: 'Jakarta Selatan'),
+            SelectedItem(key: '4', value: 'Bandung'),
+        ];
+
+        final InputDecoration customInputDecoration = InputDecoration(
+            isDense: true,
+            hintText: 'bla bla',
+            border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(width: 1.5),
+            ),
+        );
+
+        @override
+        Widget build(BuildContext context) {
+            return Scaffold(
+            appBar: AppBar(
+                title: Text(widget.title),
+            ),
+            body: _mainBody(context),
+            );
+        }
+
+        Widget _mainBody(context) {
+            Size size = MediaQuery.of(context).size;
+
+            return Padding(
+            padding: EdgeInsets.symmetric(horizontal: size.height * 0.02),
+            child: ListView(
+                children: [
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                    SizedBox(
+                        height: size.height * 0.01,
+                    ),
+                     //// this sample for Form Type material
+                    DynamicTextField(
+                        formType: FormType.material,
+                        textDynamicController: _fullnameController,
+                        title: 'Full Name',
+                        hint: 'Input full name...',
+                    ),
+                    DynamicTextField(
+                        formType: FormType.material,
+                        fieldtype: FieldType.listDropdown,
+                        textDynamicController: _gendersController,
+                        title: 'Gender',
+                        hint: 'Input gender...',
+                        titleList: "Select gender",
+                        listItem: _listGenders,
+                    ),
+                    DynamicTextField(
+                        formType: FormType.material,
+                        fieldtype: FieldType.listNewPage,
+                        textDynamicController: _citysController,
+                        title: 'City',
+                        hint: 'Input city...',
+                        titleList: "Select City",
+                        listItem: _listCitys,
+                    ),
+                    DynamicTextField(
+                        formType: FormType.material,
+                        fieldtype: FieldType.password,
+                        textDynamicController: _passwordController,
+                        title: 'Password',
+                        hint: 'Input password...',
+                    ),
+                    /// this sample for custom InputDecoration
+                    DynamicTextField(
+                        formType: FormType.material,
+                        textDynamicController: _citysController,
+                        title: 'City',
+                        hint: 'Input city...',
+                        titleList: "Select City",
+                        listItem: _listCitys,
+                        inputDecoration: customInputDecoration,
+                    ),
+                    ],
+                ),
+                ],
+            ),
+            );
+        }
+    }
+
+```
 
 
+#### Decorations can be customized  `Customized DynamicTextField`:
 
+```dart
+ //// this sample for custom InputDecoration
+    DynamicTextField(
+    textDynamicController: _citysController,
+    title: 'City',
+    hint: 'Input city...',
+    titleList: "Select City",
+    listItem: _listCitys,
+    inputDecoration: customInputDecoration,
+    ),
+    //// this sample for set validator
+    DynamicTextField(
+    textDynamicController: _citysController,
+    title: 'City',
+    hint: 'Input city...',
+    validator: (text) {
+            if (text == null || text.isEmpty) {
+            return 'Text is empty';
+            }
+            return null;
+        },
+    ),
+ 
+```
+And can also use other default TextFormField function
+
+#### And can also use other default TextFormField function  `Other function TextFormField`:
+```dart
+        final TextEditingController textDynamicController;
+        final String title;
+        final String? titleList;
+        final String? hintSearch;
+        final String hint;
+        final FieldType? fieldtype;
+        final FormType? formType;
+        final List<SelectedItem>? listItem;
+        final InputDecoration? inputDecoration;
+        final Color? backgroundColor;
+        final String? Function(String?)? validator;
+        final void Function(String)? onChanged;
+        final void Function(String?)? onSaved;
+        final AutovalidateMode? autovalidateMode;
+        final TextInputType? keyboardType;
+        final TextInputAction? textInputAction;
+        final int? maxLength;
+
+```
+
+## Preview  FormType basic
+<img width="514"height="540" alt="flutter test"  src="/screenshots/image_01.gif" > 
+
+## Preview  FormType material
+<img width="514" alt="flutter test"  src="/screenshots/image_02.gif" > 
 
 
 
