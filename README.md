@@ -331,11 +331,17 @@ And can also use other default TextFormField function
 
 ```
 
-## Preview  FormType basic
-<img height="540"  alt="Preview  FormType basic"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_01.gif" > 
-
-## Preview  FormType material
-<img height="540" alt="Preview  FormType material"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_02.gif" > 
+<table style="width:100%">
+  <tr>
+    <th>Preview  FormType basic</th>
+    <th>Preview  FormType material</th>
+  </tr>
+  <tr>
+    <td><img height="540"  alt="Preview  FormType basic"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_01.gif" > </td>
+    <td><img height="540" alt="Preview  FormType material"  src="https://raw.githubusercontent.com/block7code/dinamis_text_form_field/refs/heads/main/screenshots/image_02.gif" > </td>
+  </tr>
+  
+</table>
 
 
 
