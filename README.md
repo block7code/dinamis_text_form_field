@@ -331,6 +331,7 @@ And can also use other default TextFormField function
 
 ```
 
+## Preview  
 <table style="width:100%">
   <tr>
     <th>Preview  FormType basic</th>
